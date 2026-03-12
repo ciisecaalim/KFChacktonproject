@@ -20,31 +20,22 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-inner container">
-                <div class="hero-text">
-                    <h2>Join Assignment Tracker</h2>
-                    <p>Create an account, organize coursework, and stay ahead of every deadline.</p>
-                    <div class="hero-buttons">
-                        <a href="register.html" class="btn">Create account</a>
-                        <a href="login.html" class="btn btn-outline">Already a member</a>
-                    </div>
-                    <div class="hero-stats">
-                        <span>Secure registration</span>
-                        <span>Track submissions</span>
-                        <span>Plan smarter</span>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://i.pinimg.com/564x/75/85/75/75857574973072391.jpg" alt="Student planning">
-                </div>
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h2>Create an account and never miss a deadline</h2>
+                <p>Save assignment details, deadlines, and priorities with one simple form. We keep the UI clean so you can focus on learning.</p>
             </div>
-        </section>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Register">
+            </div>
+        </div>
+    </section>
 
-        <section class="container">
+    <main class="container">
+        <section>
             <div class="form-wrapper">
-                <h2>Create your account</h2>
+                <h2>Get started</h2>
                 <form id="registerForm">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
@@ -62,17 +53,33 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" required>
                     </div>
-                    <button type="submit" class="btn-submit">Register</button>
+                    <button type="submit" class="btn-submit">Create account</button>
                 </form>
-                <p style="text-align: center; margin-top: 1rem;">Already have an account? <a href="login.html" style="color: var(--secondary); text-decoration: none;">Login here</a></p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p> 2026 Assignment Tracker. All rights reserved.</p>
-            <p>Contact: info@assignmenttracker.com</p>
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>Assignment Tracker</h4>
+                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick links</h4>
+                <a href="index.html">Home</a><br>
+                <a href="assignments.html">Assignments</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Stay in touch</h4>
+                <p>Email: info@assignmenttracker.com</p>
+                <p>2026 · Built for students</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Assignment Tracker.</span>
+            <span>Green &amp; orange energy in every page.</span>
         </div>
     </footer>
 

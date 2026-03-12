@@ -1,79 +1,114 @@
-<!DOCTYPE html> 
-<html lang=\"en\"> 
-<head> 
-    <meta charset=\"UTF-8\"> 
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> 
-    <title>Assignment Tracker - Assignments</title> 
-    <link rel=\"stylesheet\" href=\"style.css\"> 
-</head> 
-<body> 
-    <header> 
-        <nav class=\"container\"> 
-            <h1>Assignment Tracker</h1> 
-            <ul> 
-                <li><a href=\"index.html\">Home</a></li> 
-                <li><a href=\"register.html\">Register</a></li> 
-                <li><a href=\"login.html\">Login</a></li> 
-                <li><a href=\"assignments.html\">Assignments</a></li> 
-                <li><a href=\"contact.html\">Contact</a></li> 
-            </ul> 
-        </nav> 
-    </header> 
-    <main class=\"container\"> 
-        <p class=\"text-center mb-8\">A simple web app to help students manage and track their assignments.</p> 
-        <div class=\"toggle-actions\"> 
-            <button type=\"button\" class=\"toggle-btn active\" data-target=\"addAssignmentSection\">Add assignment</button> 
-            <button type=\"button\" class=\"toggle-btn\" data-target=\"assignmentsViewSection\">View assignments</button> 
-        </div> 
-        <section id=\"addAssignmentSection\" class=\"toggle-section\"> 
-            <div class=\"form-wrapper\"> 
-                <h2 style=\"color: var(--gray-800);\">Add New Assignment</h2> 
-                <form id=\"assignmentForm\"> 
-                    <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;\"> 
-                        <div class=\"form-group\"> 
-                            <label for=\"subject\">Subject Name</label> 
-                            <input type=\"text\" id=\"subject\" name=\"subject\" required> 
-                        </div> 
-                        <div class=\"form-group\"> 
-                            <label for=\"title\">Assignment Title</label> 
-                            <input type=\"text\" id=\"title\" name=\"title\" required> 
-                        </div> 
-                        <div style=\"grid-column: span 2;\"> 
-                            <div class=\"form-group\"> 
-                                <label for=\"description\">Description</label> 
-                                <textarea id=\"description\" name=\"description\" rows=\"3\"></textarea> 
-                            </div> 
-                        </div> 
-                        <div class=\"form-group\"> 
-                            <label for=\"deadline\">Deadline Date</label> 
-                            <input type=\"date\" id=\"deadline\" name=\"deadline\" required> 
-                        </div> 
-                        <div class=\"form-group\"> 
-                            <label for=\"priority\">Priority</label> 
-                            <select id=\"priority\" name=\"priority\" required> 
-                                <option value=\"Low\">Low</option> 
-                                <option value=\"Medium\">Medium</option> 
-                                <option value=\"High\">High</option> 
-                            </select> 
-                        </div> 
-                    </div> 
-                    <button type=\"submit\" class=\"btn-submit\" style=\"margin-top: 1rem;\">Add Assignment</button> 
-                </form> 
-            </div> 
-        </section> 
-        <section id=\"assignmentsViewSection\" class=\"toggle-section hidden\"> 
-            <h2 class=\"text-center mb-8\">Your assignments</h2> 
-            <div id=\"assignmentsList\" class=\"grid\"> 
-            <!-- Assignments will be displayed here --> 
-            </div> 
-        </section> 
-    </main> 
-    <footer> 
-        <div class=\"container\"> 
-            <p> 2026 Assignment Tracker. All rights reserved.</p> 
-            <p>Contact: info@assignmenttracker.com</p> 
-        </div> 
-    </footer> 
-    <script src=\"main.js\"></script> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Tracker - Assignments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <h1>Assignment Tracker</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h2>Manage every assignment with confidence</h2>
+                <p>Switch between adding new work and reviewing your current load with one tap. Track deadlines, set priorities, and mark progress.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Assignments">
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <p class="text-center section-title">Assignments</p>
+
+        <div class="toggle-actions">
+            <button type="button" class="toggle-btn active" data-target="addAssignmentSection">Add assignment</button>
+            <button type="button" class="toggle-btn" data-target="assignmentsViewSection">View assignments</button>
+        </div>
+
+        <section id="addAssignmentSection" class="toggle-section">
+            <div class="form-wrapper">
+                <h2>Add new assignment</h2>
+                <form id="assignmentForm">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div class="form-group">
+                            <label for="subject">Subject name</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Assignment title</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        <div style="grid-column: span 2;">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Deadline date</label>
+                            <input type="date" id="deadline" name="deadline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority">Priority</label>
+                            <select id="priority" name="priority" required>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit" style="margin-top: 1rem;">Add assignment</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="assignmentsViewSection" class="toggle-section hidden">
+            <h2 class="section-title">Your assignments</h2>
+            <div id="assignmentsList" class="grid">
+                <!-- assignments appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>Assignment Tracker</h4>
+                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick links</h4>
+                <a href="index.html">Home</a><br>
+                <a href="register.html">Register</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Stay in touch</h4>
+                <p>Email: info@assignmenttracker.com</p>
+                <p>2026 · Built for students</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Assignment Tracker.</span>
+            <span>Green &amp; orange energy in every page.</span>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

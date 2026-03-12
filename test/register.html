@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Tracker - Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <h1>Assignment Tracker</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner container">
+                <div class="hero-text">
+                    <h2>Join Assignment Tracker</h2>
+                    <p>Create an account, organize coursework, and stay ahead of every deadline.</p>
+                    <div class="hero-buttons">
+                        <a href="register.html" class="btn">Create account</a>
+                        <a href="login.html" class="btn btn-outline">Already a member</a>
+                    </div>
+                    <div class="hero-stats">
+                        <span>Secure registration</span>
+                        <span>Track submissions</span>
+                        <span>Plan smarter</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.pinimg.com/564x/75/85/75/75857574973072391.jpg" alt="Student planning">
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="form-wrapper">
+                <h2>Create your account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Register</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem;">Already have an account? <a href="login.html" style="color: var(--secondary); text-decoration: none;">Login here</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2026 Assignment Tracker. All rights reserved.</p>
+            <p>Contact: info@assignmenttracker.com</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,119 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Tracker - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Tracker · Professional study workflow</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <h1>Assignment Tracker</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="assignments.html">Assignments</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Assignment Tracker</a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="assignments.html">Assignments</a>
+          <a href="contact.html">Contact</a>
+          
+          <a href="register.html">Register</a>
+          <a href="login.html">Login</a>
         </nav>
+        <a class="btn-outline" href="register.html">Create account</a>
+      </div>
     </header>
 
-    <section class="hero">
+    <main class="main-content">
+      <section class="hero-panel">
         <div class="container hero-inner">
-            <div class="hero-text">
-                <h2>Stay ahead of every deadline with a clean workflow</h2>
-                <p>Assignment Tracker keeps your classes, submissions, and study prep organized in one place. Plan smarter, save time, and focus on learning.</p>
-                <div class="hero-buttons">
-                    <a class="btn" href="assignments.html">Add assignment</a>
-                    <button class="btn-secondary" onclick="window.location.href='register.html'">Create free account</button>
-                </div>
-                <div class="hero-stats">
-                    <span>10K+ lessons tracked weekly</span>
-                    <span>4.8 average student rating</span>
-                    <span>Trusted by 150+ cohorts</span>
-                </div>
+          <div class="hero-copy">
+            <p class="stat-pill" style="margin-bottom:0.5rem;">Trusted by focused learners</p>
+            <h1>Organize every deadline with clarity and calm.</h1>
+            <p>
+              Assignment Tracker brings timeline visibility, smart reminders, and polished layout controls so you
+              can manage coursework, collaborate with classmates, and close every week with confidence.
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="register.html">Start free trial</a>
+              <a class="btn-outline" href="assignments.html">Explore workspace</a>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Students studying together">
+            <div class="hero-stats">
+              <span class="stat-pill">10K+ due dates monitored weekly</span>
+              <span class="stat-pill">4.8/5 average student rating</span>
+              <span class="stat-pill">150+ cohorts onboarded</span>
             </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1000&q=80"
+              alt="Student organizing assignments"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <main class="container">
-        <section>
-            <h2 class="section-title">Designed for focused students</h2>
-            <div class="grid-cards">
-                <article class="card">
-                    <h3>Track every assignment</h3>
-                    <p>Save project details, due dates, and reminders so nothing slips through the cracks. Each assignment lives beside its subject, status, and priority.</p>
-                </article>
-                <article class="card">
-                    <h3>Visual progress</h3>
-                    <p>View your workload at a glance with cards that show completion status, deadlines, and priority. Toggle between adding and reviewing assignments without losing context.</p>
-                </article>
-                <article class="card">
-                    <h3>Simple signup</h3>
-                    <p>Register once, then jump straight into adding submissions or reviewing past work. LocalStorage keeps your inputs safe while you test ideas.</p>
-                </article>
-            </div>
-        </section>
+      <section class="feature-section">
+        <div class="container">
+          <p class="section-title">Built for students, tutors, and program leads</p>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Precision planning</h3>
+              <p>Capture every prompt, deadline, and deliverable with structured fields so nothing blurs between subjects.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Always-on clarity</h3>
+              <p>Create visual lanes for due dates, status, and priority so you know exactly where to focus each day.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Secure local data</h3>
+              <p>Everything stays in your browser for the prototype experience; build habits before you connect to a sync layer.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Smooth onboarding</h3>
+              <p>Sign up once, then add assignments, flip between study modes, and review achievements without losing context.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h2 class="section-title">How it works</h2>
-            <div class="info-row">
-                <div>
-                    <h4>Add details</h4>
-                    <p>Name the subject, give your task a title, include a short brief, and mark a deadline. Every field is tuned to make adding assignments fast.</p>
-                </div>
-                <div>
-                    <h4>Update progress</h4>
-                    <p>Mark assignments as complete, toggle visibility between adding and viewing, and delete old entries when you're done. The UI responds instantly.</p>
-                </div>
-                <div>
-                    <h4>Stay in control</h4>
-                    <p>Use the hero CTA to navigate between key screens. The footer stays in place to provide emergency contact info and quick links across every page.</p>
-                </div>
-            </div>
-        </section>
+      <section class="workflow-section">
+        <div class="container">
+          <p class="section-title">Workflow tailored to modern learning</p>
+          <div class="timeline">
+            <span class="timeline-step">Plan</span>
+            <span class="timeline-step">Prioritize</span>
+            <span class="timeline-step">Complete</span>
+            <span class="timeline-step">Review</span>
+          </div>
+          <div class="workflow-grid">
+            <article class="workflow-card">
+              <h4>Add assignments</h4>
+              <p>Quick form inputs keep you in focus so you can capture subject, description, deadline, and priority in under a minute.</p>
+            </article>
+            <article class="workflow-card">
+              <h4>Monitor progress</h4>
+              <p>Toggle between detailed cards and summary views to see what is due soon, what is complete, and what needs attention.</p>
+            </article>
+            <article class="workflow-card">
+              <h4>Deliver with confidence</h4>
+              <p>Use built-in completion controls to celebrate wins, archive old work, and keep the list lean for the next sprint.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <div class="cta-band">
-                <h3>Ready to streamline your studies?</h3>
-                <p>Switch to a workflow that highlights every assignment, keeps deadlines visible, and rewards consistency.</p>
-                <div class="hero-buttons" style="justify-content:center;">
-                    <a class="btn" href="register.html">Start organizing</a>
-                    <a class="btn-secondary" href="assignments.html">See assignments</a>
-                </div>
-            </div>
-        </section>
+      <section class="testimonial-section">
+        <div class="container">
+          <p class="section-title">What learners are saying</p>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <blockquote>
+                “Assignment Tracker feels like a personal planner designed for study blocks. I finally stop losing track of prompts.”
+              </blockquote>
+              <footer>Jules · Business analytics student</footer>
+            </article>
+            <article class="testimonial-card">
+              <blockquote>
+                “The interface is calm, the reminders are helpful, and I can see how my weekly work stacks up. No more deadline panic.”
+              </blockquote>
+              <footer>Riya · Engineering cohort lead</footer>
+            </article>
+            <article class="testimonial-card">
+              <blockquote>
+                “I love how easy it is to archive past submissions. It keeps the board tidy and motivates me to finish strong.”
+              </blockquote>
+              <footer>Marcus · Pre-med student</footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="container">
+          <h2>Ready to keep every module, project, and flag in one reliable place?</h2>
+          <p>Sign up to align your schedule, assign priorities, and track results without needing a messy spreadsheet.</p>
+          <div class="hero-cta">
+            <a class="btn" href="register.html">Create your workspace</a>
+            <a class="btn-outline" href="assignments.html">Preview assignments</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Assignment Tracker</h4>
-                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead of every deadline.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick links</h4>
-                <a href="index.html">Home</a><br>
-                <a href="assignments.html">Assignments</a><br>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <p>Email: info@assignmenttracker.com</p>
-                <p>Est. 2026 · Built for today's classrooms</p>
-            </div>
+      <div class="container footer-content">
+        <div class="footer-column">
+          <h4>Assignment Tracker</h4>
+          <p>Focused tools for modern students who want calm, clarity, and control over every deadline.</p>
         </div>
-        <div class="container footer-bottom">
-            <span>© 2026 Assignment Tracker. All rights reserved.</span>
-            <span>Designed with green + orange energy.</span>
+        <div class="footer-column">
+          <h4>Quick links</h4>
+          <a href="index.html">Home</a><br />
+          <a href="assignments.html">Assignments</a><br />
+          <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>Email: info@assignmenttracker.com</p>
+          <p>© 2026 Assignment Tracker · Crafted for confident study</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Secure local data · Lightweight interface</span>
+        <span>Designed for people who value focus.</span>
+      </div>
     </footer>
-
-    <script src="main.js"></script>
+  </div>
 </body>
 </html>

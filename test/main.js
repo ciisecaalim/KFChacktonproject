@@ -107,23 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const toggleButtons = document.querySelectorAll('.toggle-btn');
-    const toggleSections = document.querySelectorAll('.toggle-section');
-    if (toggleButtons.length && toggleSections.length) {
+    if (toggleButtons.length) {
         toggleButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 const targetId = button.dataset.target;
                 if (!targetId) return;
-                toggleButtons.forEach((btn) => btn.classList.remove('active'));
-                button.classList.add('active');
-                toggleSections.forEach((section) => {
-                    if (section.id === targetId) {
-                        section.classList.remove('hidden');
-                    } else {
-                        section.classList.add('hidden');
-                    }
-                });
+                setActiveSection(targetId);
             });
         });
+        setActiveSection('addAssignmentSection');
     }
 });
 
@@ -152,6 +144,7 @@ function addAssignment(e) {
     assignments.push({ subject, title, description, deadline, priority, completed: false });
     saveAssignments(assignments);
     renderAssignments(assignments);
+    setActiveSection('addAssignmentSection');
     assignmentForm.reset();
 }
 
@@ -201,4 +194,24 @@ function deleteAssignment(index) {
     assignments = assignments.filter((_, i) => i !== index);
     saveAssignments(assignments);
     renderAssignments(assignments);
+}
+
+function setActiveSection(targetId) {
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    const toggleSections = document.querySelectorAll('.toggle-section');
+    if (!targetId) return;
+    toggleButtons.forEach((btn) => {
+        if (btn.dataset.target === targetId) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    toggleSections.forEach((section) => {
+        if (section.id === targetId) {
+            section.classList.remove('hidden');
+        } else {
+            section.classList.add('hidden');
+        }
+    });
 }

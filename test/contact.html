@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Tracker - Contact</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Tracker · Contact</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <h1>Assignment Tracker</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="assignments.html">Assignments</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Assignment Tracker</a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="assignments.html">Assignments</a>
+          <a href="register.html">Register</a>
+          <a href="login.html">Login</a>
+          <a href="contact.html">Contact</a>
         </nav>
+        <a class="btn-outline" href="register.html">Create account</a>
+      </div>
     </header>
 
-    <section class="hero">
+    <main class="main-content">
+      <section class="hero-panel">
         <div class="container hero-inner">
-            <div class="hero-text">
-                <h2>Need help? Let’s chat.</h2>
-                <p>Our team is here to help you get the most out of Assignment Tracker. Reach out anytime and we will respond within 24 hours.</p>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Contact">
-            </div>
+          <div class="hero-copy">
+            <p class="stat-pill" style="margin-bottom:0.5rem;">Need support?</p>
+            <h1>We’re here to help you stay organized.</h1>
+            <p>Reach out to the Assignment Tracker team for questions, feature ideas, or collaboration requests.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80" alt="Contact" />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <main class="container">
-        <section>
-            <div class="grid">
-                <div class="form-wrapper">
-                    <h2>Send us a message</h2>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Send message</button>
-                    </form>
-                </div>
-                <div class="card">
-                    <h3>Contact Info</h3>
-                    <p>Email: info@assignmenttracker.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <p>Open for support Monday–Friday</p>
-                </div>
-            </div>
-        </section>
+      <section class="container">
+        <div class="main-grid">
+          <article class="form-card">
+            <h2>Send a message</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send message</button>
+            </form>
+          </article>
+          <article class="contact-card">
+            <h3>Contact info</h3>
+            <p>Mail: info@assignmenttracker.com</p>
+            <p>Open hours: Monday–Friday · 9am–6pm</p>
+            <p>Response time: under 24h</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Assignment Tracker</h4>
-                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick links</h4>
-                <a href="index.html">Home</a><br>
-                <a href="assignments.html">Assignments</a><br>
-                <a href="register.html">Register</a>
-            </div>
-            <div class="footer-column">
-                <h4>Stay in touch</h4>
-                <p>Email: info@assignmenttracker.com</p>
-                <p>24h support · 2026</p>
-            </div>
+      <div class="container footer-content">
+        <div class="footer-column">
+          <h4>Assignment Tracker</h4>
+          <p>Tools that respect your workflow and make deadlines visible without noise.</p>
         </div>
-        <div class="container footer-bottom">
-            <span>© 2026 Assignment Tracker.</span>
-            <span>Green &amp; orange energy in every page.</span>
+        <div class="footer-column">
+          <h4>Quick links</h4>
+          <a href="index.html">Home</a><br />
+          <a href="assignments.html">Assignments</a><br />
+          <a href="register.html">Register</a>
         </div>
+        <div class="footer-column">
+          <h4>Stay in touch</h4>
+          <p>Email: info@assignmenttracker.com</p>
+          <p>© 2026 Assignment Tracker · Crafted for confident study</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Secure local data · Lightweight interface</span>
+        <span>Designed for people who value focus.</span>
+      </div>
     </footer>
-
-    <script src="main.js"></script>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>

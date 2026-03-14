@@ -1,88 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Tracker - Register</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Tracker · Register</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <h1>Assignment Tracker</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="assignments.html">Assignments</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Assignment Tracker</a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="assignments.html">Assignments</a>
+          <a href="register.html">Register</a>
+          <a href="login.html">Login</a>
+          <a href="contact.html">Contact</a>
         </nav>
+        <a class="btn-outline" href="login.html">Login</a>
+      </div>
     </header>
 
-    <section class="hero">
+    <main class="main-content">
+      <section class="hero-panel">
         <div class="container hero-inner">
-            <div class="hero-text">
-                <h2>Create an account and never miss a deadline</h2>
-                <p>Save assignment details, deadlines, and priorities with one simple form. We keep the UI clean so you can focus on learning.</p>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Register">
-            </div>
+          <div class="hero-copy">
+            <p class="stat-pill" style="margin-bottom:0.5rem;">Professional focus starts here</p>
+            <h1>Create an account in seconds.</h1>
+            <p>Create a secure profile, then jump into structuring every assignment with smart context and due-date visibility.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Register with Assignment Tracker" />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <main class="container">
-        <section>
-            <div class="form-wrapper">
-                <h2>Get started</h2>
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Create account</button>
-                </form>
+      <section class="main-grid container">
+        <article class="form-card">
+          <h2>Create your account</h2>
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="fullName">Full name</label>
+              <input type="text" id="fullName" name="fullName" required />
             </div>
-        </section>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" minlength="6" required />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" required />
+            </div>
+            <button type="submit" class="btn">Register</button>
+          </form>
+        </article>
+        <article class="panel-card">
+          <h3>Why sign up?</h3>
+          <p>Instantly store assignment prompts, set deadlines, and flag priority. The board stays minimal but full of actionable insight.</p>
+          <ul style="margin-top:1rem; color:var(--clr-muted); line-height:1.6;">
+            <li>Save unlimited subject categories</li>
+            <li>Get reminders when deadlines approach</li>
+            <li>Easily mark progress or archive finished work</li>
+          </ul>
+        </article>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Assignment Tracker</h4>
-                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick links</h4>
-                <a href="index.html">Home</a><br>
-                <a href="assignments.html">Assignments</a><br>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-column">
-                <h4>Stay in touch</h4>
-                <p>Email: info@assignmenttracker.com</p>
-                <p>2026 · Built for students</p>
-            </div>
+      <div class="container footer-content">
+        <div class="footer-column">
+          <h4>Assignment Tracker</h4>
+          <p>Tools that respect your workflow and make deadlines visible without noise.</p>
         </div>
-        <div class="container footer-bottom">
-            <span>© 2026 Assignment Tracker.</span>
-            <span>Green &amp; orange energy in every page.</span>
+        <div class="footer-column">
+          <h4>Quick links</h4>
+          <a href="index.html">Home</a><br />
+          <a href="assignments.html">Assignments</a><br />
+          <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>Email: info@assignmenttracker.com</p>
+          <p>© 2026 Assignment Tracker · Crafted for confident study</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Secure local data · Lightweight interface</span>
+        <span>Designed for people who value focus.</span>
+      </div>
     </footer>
-
-    <script src="main.js"></script>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>

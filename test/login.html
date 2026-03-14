@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Tracker - Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Tracker · Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <h1>Assignment Tracker</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="assignments.html">Assignments</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Assignment Tracker</a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="assignments.html">Assignments</a>
+          <a href="register.html">Register</a>
+          <a href="login.html">Login</a>
+          <a href="contact.html">Contact</a>
         </nav>
+        <a class="btn-outline" href="register.html">Register</a>
+      </div>
     </header>
 
-    <section class="hero">
+    <main class="main-content">
+      <section class="hero-panel">
         <div class="container hero-inner">
-            <div class="hero-text">
-                <h2>Welcome back! Continue building strong study habits.</h2>
-                <p>Login to see all your active assignments, track deadlines, and mark progress across your classes.</p>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="Login">
-            </div>
+          <div class="hero-copy">
+            <p class="stat-pill" style="margin-bottom:0.5rem;">Welcome back</p>
+            <h1>Continue where you left off.</h1>
+            <p>Login to refresh your dashboard, review priorities, and keep every assignment on your radar.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Sign in" />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <main class="container">
-        <section>
-            <div class="form-wrapper">
-                <h2>Sign in</h2>
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Login</button>
-                </form>
+      <section class="container">
+        <article class="form-card" style="max-width:28rem; margin: 0 auto;">
+          <h2>Sign in</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
             </div>
-        </section>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" minlength="6" required />
+            </div>
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </article>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Assignment Tracker</h4>
-                <p>Logical, fast, and friendly assignment planning for students who want to stay ahead.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick links</h4>
-                <a href="index.html">Home</a><br>
-                <a href="assignments.html">Assignments</a><br>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-column">
-                <h4>Stay in touch</h4>
-                <p>Email: info@assignmenttracker.com</p>
-                <p>2026 · Built for students</p>
-            </div>
+      <div class="container footer-content">
+        <div class="footer-column">
+          <h4>Assignment Tracker</h4>
+          <p>Tools that respect your workflow and make deadlines visible without noise.</p>
         </div>
-        <div class="container footer-bottom">
-            <span>© 2026 Assignment Tracker.</span>
-            <span>Green &amp; orange energy in every page.</span>
+        <div class="footer-column">
+          <h4>Quick links</h4>
+          <a href="index.html">Home</a><br />
+          <a href="assignments.html">Assignments</a><br />
+          <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>Email: info@assignmenttracker.com</p>
+          <p>© 2026 Assignment Tracker · Crafted for confident study</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Secure local data · Lightweight interface</span>
+        <span>Designed for people who value focus.</span>
+      </div>
     </footer>
-
-    <script src="main.js"></script>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>

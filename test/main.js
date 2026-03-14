@@ -12,34 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Validation
             if (!fullName) {
-                alert('Please enter your full name.');
+                alert('Fadlan geli magacaaga oo dhan.');
                 return;
             }
             if (!email) {
-                alert('Please enter your email address.');
+                alert('Fadlan geli cinwaanka email-ka.');
                 return;
             }
             if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
+                alert('Fadlan geli cinwaan email sax ah.');
                 return;
             }
             if (!password) {
-                alert('Please enter a password.');
+                alert('Fadlan geli furaha sirta.');
                 return;
             }
             if (password.length < 6) {
-                alert('Password must be at least 6 characters long.');
+                alert('Furaha sirta waa inuu ugu yaraan 6 xaraf ka kooban yahay.');
                 return;
             }
             if (password !== confirm) {
-                alert('Passwords do not match.');
+                alert('Furayaasha sirta ma isku mid yihiin.');
                 return;
             }
 
             // Check if user already exists
             const users = getUsers();
             if (users.some(u => u.email === email)) {
-                alert('An account with this email already exists.');
+                alert('Akoon leh cinwaankan email-ka wuu hore u jiray.');
                 return;
             }
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             users.push({ fullName, email, password });
             saveUsers(users);
 
-            alert('Registered successfully!');
+            alert('Si guul leh ayaa loo isdiiwaangaliyay!');
             registerForm.reset();
         });
     }
@@ -61,19 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Validation
             if (!email) {
-                alert('Please enter your email address.');
+                alert('Fadlan geli cinwaanka email-ka.');
                 return;
             }
             if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
+                alert('Fadlan geli cinwaan email sax ah.');
                 return;
             }
             if (!password) {
-                alert('Please enter your password.');
+                alert('Fadlan geli furaha sirta.');
                 return;
             }
             if (password.length < 6) {
-                alert('Password must be at least 6 characters long.');
+                alert('Furaha sirta waa inuu ugu yaraan 6 xaraf ka kooban yahay.');
                 return;
             }
 
@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const users = getUsers();
             const user = users.find(u => u.email === email && u.password === password);
             if (!user) {
-                alert('Invalid email or password.');
+                alert('Email ama furaha sirta waa khalad.');
                 return;
             }
 
-            alert('Logged in successfully!');
+            alert('Si guul leh ayaa loo galay!');
             loginForm.reset();
         });
     }
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Message received! We will be in touch.');
+            alert('Fariinta waa la helay! Waxaan kula soo xiriiri doonaa.');
             contactForm.reset();
         });
     }
@@ -161,11 +161,11 @@ function renderAssignments(assignments) {
         card.innerHTML = `
       <h4>${a.title}</h4>
       <p style="color: var(--gray-600);">${a.subject}</p>
-      <p>Deadline: ${a.deadline}</p>
-      <p>Priority: ${a.priority}</p>
+      <p>Waqtiga kama dambaysta ah: ${a.deadline}</p>
+      <p>Mudnaan: ${a.priority}</p>
       <div style="margin-top: 0.5rem;">
-        <button class="btn-small">${a.completed ? 'Completed' : 'Mark as Complete'}</button>
-        <button class="btn-small delete">Delete</button>
+        <button class="btn-small">${a.completed ? 'Dhameystiran' : 'Calaamadee dhameystiran'}</button>
+        <button class="btn-small delete">Tirtir</button>
       </div>
     `;
         container.appendChild(card);
@@ -194,6 +194,10 @@ function deleteAssignment(index) {
     assignments = assignments.filter((_, i) => i !== index);
     saveAssignments(assignments);
     renderAssignments(assignments);
+}
+
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
 }
 
 function setActiveSection(targetId) {

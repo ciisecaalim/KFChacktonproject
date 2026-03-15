@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const assignmentForm = document.getElementById('assignmentForm');
     const assignmentsList = document.getElementById('assignmentsList');
     if (assignmentForm && assignmentsList) {
-        loadAssignments();
+        loadAssignments(true);
         assignmentForm.addEventListener('submit', addAssignment);
     }
 
@@ -135,24 +135,66 @@ function saveAssignments(arr) {
     localStorage.setItem('assignments', JSON.stringify(arr));
 }
 
-function loadAssignments() {
+function loadAssignments(showCountAlert = false) {
     const assignments = getAssignments();
     renderAssignments(assignments);
+    if (showCountAlert) {
+        notifyAssignmentCount(assignments.length);
+    }
 }
 
 function addAssignment(e) {
     e.preventDefault();
-    const subject = document.getElementById('subject').value;
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const deadline = document.getElementById('deadline').value;
-    const priority = document.getElementById('priority').value;
+    const form = e.target;
+    const subject = form.subject.value.trim();
+    const title = form.title.value.trim();
+    const description = form.description.value.trim();
+    const deadlineInput = form.deadline.value;
+    const priority = form.priority.value || 'Low';
+
+    if (!subject) {
+        alert('Please enter a subject name.');
+        return;
+    }
+    if (!title) {
+        alert('Please enter a title for the assignment.');
+        return;
+    }
+    if (!deadlineInput) {
+        alert('Please pick a deadline date.');
+        return;
+    }
+    const parsedDeadline = new Date(deadlineInput);
+    if (Number.isNaN(parsedDeadline.getTime())) {
+        alert('Please enter a valid deadline date.');
+        return;
+    }
+
     const assignments = getAssignments();
-    assignments.push({ subject, title, description, deadline, priority, completed: false });
+    const duplicate = assignments.some(
+        (a) => a.subject.toLowerCase() === subject.toLowerCase() && a.title.toLowerCase() === title.toLowerCase()
+    );
+    if (duplicate) {
+        alert('An assignment with the same subject and title already exists.');
+        return;
+    }
+
+    const assignment = {
+        subject,
+        title,
+        description,
+        deadline: parsedDeadline.toISOString().split('T')[0],
+        priority,
+        completed: false,
+        createdAt: new Date().toISOString(),
+    };
+
+    assignments.push(assignment);
     saveAssignments(assignments);
     renderAssignments(assignments);
     setActiveSection('addAssignmentSection');
-    assignmentForm.reset();
+    alert('Assignment added successfully!');
+    form.reset();
 }
 
 function renderAssignments(assignments) {
@@ -201,6 +243,10 @@ function deleteAssignment(index) {
     assignments = assignments.filter((_, i) => i !== index);
     saveAssignments(assignments);
     renderAssignments(assignments);
+}
+
+function notifyAssignmentCount(count) {
+    alert(`You have ${count} assignment${count === 1 ? '' : 's'} stored.`);
 }
 
 function getUsers() {

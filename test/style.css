@@ -191,8 +191,8 @@ a {
 .hero-inner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  align-items: center;
+  gap: 3rem;
+  align-items: stretch;
 }
 
 .hero-copy h1 {
@@ -221,6 +221,7 @@ a {
 }
 
 .hero-image img {
+  min-height: 320px;
   width: 100%;
   display: block;
 }
@@ -404,8 +405,14 @@ a {
 }
 
 .form-card h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 1.8rem;
+}
+
+.auth-status {
+  font-size: 0.9rem;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
 }
 
 .form-group {
@@ -444,8 +451,10 @@ select:focus {
 
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 0 3rem;
 }
 
 .panel-card {
@@ -463,6 +472,13 @@ select:focus {
 .panel-card p {
   color: var(--clr-muted);
   font-size: 0.95rem;
+}
+
+.benefits-list {
+  margin-top: 1rem;
+  color: var(--clr-muted);
+  line-height: 1.6;
+  padding-left: 1.2rem;
 }
 
 .contact-card {
@@ -526,7 +542,8 @@ select:focus {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.2rem;
+  gap: 1.8rem;
+  margin-top: 1rem;
 }
 
 .card {

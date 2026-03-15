@@ -44,4 +44,4 @@ The project is designed using **HTML**, **CSS**, and **JavaScript**, and it stor
 - Best for learning and small frontend practice projects.
 
 ## Author
-Created by **[Your Name]**
+Created by **[Isse Alim Ahmed]**

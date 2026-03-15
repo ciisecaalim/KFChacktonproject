@@ -37,10 +37,11 @@
       </section>
 
       <section class="main-grid container">
-          <article class="form-card">
+        <article class="form-card">
           <h2>Create your account</h2>
-            <form id="registerForm">
-              <div class="form-group">
+          <p id="authStatus" class="auth-status" aria-live="polite"></p>
+          <form id="registerForm">
+            <div class="form-group">
               <label for="fullName">Full name</label>
               <input type="text" id="fullName" name="fullName" required />
             </div>
@@ -62,7 +63,7 @@
         <article class="panel-card">
           <h3>Why sign up?</h3>
           <p>Instantly store assignment prompts, set deadlines, and flag priority. The board stays minimal but full of actionable insight.</p>
-          <ul style="margin-top:1rem; color:var(--clr-muted); line-height:1.6;">
+          <ul class="benefits-list">
             <li>Save unlimited subject categories</li>
             <li>Get reminders when deadlines approach</li>
             <li>Easily mark progress or archive finished work</li>

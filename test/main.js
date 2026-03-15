@@ -1,6 +1,8 @@
 // main.js - handles forms and localStorage for assignments
 
 document.addEventListener('DOMContentLoaded', () => {
+    const authStatusEl = document.getElementById('authStatus');
+    updateAuthStatus(authStatusEl);
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
@@ -12,42 +14,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Validation
             if (!fullName) {
-                alert('Fadlan geli magacaaga oo dhan.');
+                alert('Please enter your full name.');
                 return;
             }
             if (!email) {
-                alert('Fadlan geli cinwaanka email-ka.');
+                alert('Please enter your email address.');
                 return;
             }
             if (!isValidEmail(email)) {
-                alert('Fadlan geli cinwaan email sax ah.');
+                alert('Please enter a valid email address.');
                 return;
             }
             if (!password) {
-                alert('Fadlan geli furaha sirta.');
+                alert('Please enter a password.');
                 return;
             }
             if (password.length < 6) {
-                alert('Furaha sirta waa inuu ugu yaraan 6 xaraf ka kooban yahay.');
+                alert('Password must be at least 6 characters.');
                 return;
             }
             if (password !== confirm) {
-                alert('Furayaasha sirta ma isku mid yihiin.');
+                alert('Passwords do not match.');
                 return;
             }
 
             // Check if user already exists
             const users = getUsers();
             if (users.some(u => u.email === email)) {
-                alert('Akoon leh cinwaankan email-ka wuu hore u jiray.');
+                alert('An account with that email already exists.');
                 return;
             }
 
             // Save user
-            users.push({ fullName, email, password });
+            const registeredAt = new Date().toISOString();
+            users.push({ fullName, email, password, registeredAt });
             saveUsers(users);
+            setCurrentUser({ fullName, email, registeredAt });
+            updateAuthStatus(authStatusEl);
 
-            alert('Si guul leh ayaa loo isdiiwaangaliyay!');
+            alert('Registration successful!');
             registerForm.reset();
         });
     }
@@ -61,19 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Validation
             if (!email) {
-                alert('Fadlan geli cinwaanka email-ka.');
+                alert('Please enter your email address.');
                 return;
             }
             if (!isValidEmail(email)) {
-                alert('Fadlan geli cinwaan email sax ah.');
+                alert('Please enter a valid email address.');
                 return;
             }
             if (!password) {
-                alert('Fadlan geli furaha sirta.');
+                alert('Please enter your password.');
                 return;
             }
             if (password.length < 6) {
-                alert('Furaha sirta waa inuu ugu yaraan 6 xaraf ka kooban yahay.');
+                alert('Password must be at least 6 characters.');
                 return;
             }
 
@@ -81,11 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const users = getUsers();
             const user = users.find(u => u.email === email && u.password === password);
             if (!user) {
-                alert('Email ama furaha sirta waa khalad.');
+                alert('Email or password is incorrect.');
                 return;
             }
+            setCurrentUser(user);
+            updateAuthStatus(authStatusEl);
 
-            alert('Si guul leh ayaa loo galay!');
+            alert('Login successful!');
             loginForm.reset();
         });
     }
@@ -101,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Fariinta waa la helay! Waxaan kula soo xiriiri doonaa.');
+            alert('Message received! We will be in touch soon.');
             contactForm.reset();
         });
     }
@@ -161,11 +168,11 @@ function renderAssignments(assignments) {
         card.innerHTML = `
       <h4>${a.title}</h4>
       <p style="color: var(--gray-600);">${a.subject}</p>
-      <p>Waqtiga kama dambaysta ah: ${a.deadline}</p>
-      <p>Mudnaan: ${a.priority}</p>
+      <p>Deadline: ${a.deadline}</p>
+      <p>Priority: ${a.priority}</p>
       <div style="margin-top: 0.5rem;">
-        <button class="btn-small">${a.completed ? 'Dhameystiran' : 'Calaamadee dhameystiran'}</button>
-        <button class="btn-small delete">Tirtir</button>
+        <button class="btn-small">${a.completed ? 'Completed' : 'Mark complete'}</button>
+        <button class="btn-small delete">Delete</button>
       </div>
     `;
         container.appendChild(card);
@@ -194,6 +201,34 @@ function deleteAssignment(index) {
     assignments = assignments.filter((_, i) => i !== index);
     saveAssignments(assignments);
     renderAssignments(assignments);
+}
+
+function getUsers() {
+    const data = localStorage.getItem('users');
+    return data ? JSON.parse(data) : [];
+}
+
+function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+function setCurrentUser(user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+}
+
+function getCurrentUser() {
+    const data = localStorage.getItem('currentUser');
+    return data ? JSON.parse(data) : null;
+}
+
+function updateAuthStatus(element = document.getElementById('authStatus')) {
+    if (!element) return;
+    const user = getCurrentUser();
+    if (user) {
+        element.textContent = `Signed in as ${user.fullName} (${user.email})`;
+    } else {
+        element.textContent = 'Not signed in yet. Register or login to get started.';
+    }
 }
 
 function isValidEmail(email) {

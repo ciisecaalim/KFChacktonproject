@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             const confirm = document.getElementById('confirmPassword').value;
-
             // Validation
             if (!fullName) {
                 alert('Please enter your full name.');
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a password.');
                 return;
             }
-            if (password.length < 6) {
-                alert('Password must be at least 6 characters.');
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters.');
                 return;
             }
             if (password !== confirm) {
@@ -77,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter your password.');
                 return;
             }
-            if (password.length < 6) {
-                alert('Password must be at least 6 characters.');
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters.');
                 return;
             }
 
@@ -278,7 +277,7 @@ function updateAuthStatus(element = document.getElementById('authStatus')) {
 }
 
 function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
+    return email;
 }
 
 function setActiveSection(targetId) {
